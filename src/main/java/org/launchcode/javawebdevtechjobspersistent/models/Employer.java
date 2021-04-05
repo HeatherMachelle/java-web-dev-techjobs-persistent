@@ -1,27 +1,39 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.*;
+//import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.data.annotation.Id;
+
 
 @Entity
 public class Employer extends AbstractEntity {
 
-
-    @NotBlank(message = "Location is required")
-    @Size(max = 150)
+    @Id
+    @NotNull(message = "Location required")
+    @Size(max = 50, message = "Limit to 50 characters.")
     private String location;
 
     @OneToMany
-    @JoinColumn(name="employer_id")
-    private final List<Job> jobs = new ArrayList<>();
+    @JoinColumn
+    private final List<Job> jobs;
 
-    public Employer() {}
+    {
+        jobs = new ArrayList<>();
+    }
+
+
+    public Employer() {
+    }
+
+    public Employer(String location) {
+        this.location = location;
+    }
+
+
 
     public String getLocation() {
         return location;
@@ -31,5 +43,7 @@ public class Employer extends AbstractEntity {
         this.location = location;
     }
 
-
+    public List<Job> getJobs() {
+        return jobs;
+    }
 }
