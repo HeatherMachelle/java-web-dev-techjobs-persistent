@@ -9,11 +9,13 @@ import java.util.Objects;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
-
+    @Id
+    @GeneratedValue
+    private int id;
     @NotNull(message = "Field cannot be blank.")
     @Size(max = 50, message = "50 characters or fewer needed")
     private String name;
-    private Object id;
+
 
 
     public AbstractEntity() {

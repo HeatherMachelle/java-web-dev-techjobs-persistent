@@ -12,7 +12,7 @@ import org.springframework.data.annotation.Id;
 @Entity
 public class Employer extends AbstractEntity {
 
-    @Id
+
     @NotNull(message = "Location required")
     @Size(max = 50, message = "Limit to 50 characters.")
     private String location;
