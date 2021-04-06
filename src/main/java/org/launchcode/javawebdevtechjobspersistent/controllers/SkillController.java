@@ -16,6 +16,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("skills")
 public class SkillController {
+
     @Autowired
     private SkillRepository skillRepository;
 

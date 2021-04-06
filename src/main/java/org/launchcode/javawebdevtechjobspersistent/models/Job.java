@@ -19,10 +19,11 @@ public class Job extends AbstractEntity{
     public Job() {
     }
 
-    public Job(Employer employer) {
-        this.employer = employer;
+    public Job(Employer anEmployer, List<Skill> someSkills) {
+        super();
+        this.employer = anEmployer;
+        this.skills = someSkills;
     }
-
 
     public Employer getEmployer() {
         return employer;
@@ -32,13 +33,11 @@ public class Job extends AbstractEntity{
         this.employer = employer;
     }
 
-    public List<Skill> getSkills() {
+    public Iterable<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(List<Skill> newSkills) {
-        for (Skill skill : newSkills) {
-            this.skills.add(skill);
-        }
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
     }
 }

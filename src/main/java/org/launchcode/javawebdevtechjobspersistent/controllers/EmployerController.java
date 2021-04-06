@@ -43,7 +43,6 @@ public class EmployerController {
         }
 
         model.addAttribute(employerRepository.save(newEmployer));
-        //employerRepository.save(newEmployer);
         return "redirect:";
     }
 

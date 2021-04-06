@@ -12,6 +12,7 @@ public abstract class AbstractEntity {
     @Id
     @GeneratedValue
     private int id;
+
     @NotNull(message = "Field cannot be blank.")
     @Size(max = 50, message = "50 characters or fewer needed")
     private String name;
@@ -24,8 +25,6 @@ public abstract class AbstractEntity {
     public AbstractEntity(String name) {
         this.name = name;
     }
-
-
 
     public int getId() {
         return (int) id;
