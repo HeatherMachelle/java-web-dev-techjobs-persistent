@@ -32,4 +32,6 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+	System.out.println()
 }
+
