@@ -1,7 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +8,7 @@ import java.util.List;
 public class Job extends AbstractEntity{
 
     @ManyToOne
-    @NotNull(message = "Job required")
+
     private Employer employer;
 
     @ManyToMany
